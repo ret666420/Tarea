@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block imagen %}
+    {% static 'contenido/images/contacto.png' %}
+{% endblock %}
+
+{% block descripcion_modulo %}
+    Contáctanos <span>Ayuda</span>
+{% endblock %}
+
+{% block content %}
+
+<div class="page-content">
+    <div class="page-header">
+        <div class="page-title">
+            <h1>Registro <span>Ingresa tu información</span></h1>
+        </div>
+    </div>
+
+    <form class="form-horizontal" method="post">
+        {% csrf_token %}
+        <div class="panel panel-default">
+            <div class="panel-body">
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label text-right">Nombre:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="nombre">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label text-right">Correo:</label>
+                    <div class="col-sm-10">
+                        <input type="email" class="form-control" name="correo">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label text-right">Curso:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="curso">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label text-right">Cursos:</label>
+                    <div class="col-sm-10">
+                        <select class="form-control" name="cursos">
+                            <option>Programación</option>
+                            <option>Base de Datos</option>
+                            <option>Desarrollo Web</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label text-right">Comentarios:</label>
+                    <div class="col-sm-10">
+                        <textarea class="form-control" name="comentarios" rows="4"></textarea>
+                    </div>
+                </div>
+
+                <div class="form-actions text-right">
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </div>
+
+            </div>
+        </div>
+    </form>
+</div>
+
+{% endblock %}
