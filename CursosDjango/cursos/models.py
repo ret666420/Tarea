@@ -15,4 +15,4 @@ class Curso(models.Model):
     class Meta:
         verbose_name = "Curso"
         verbose_name_plural = "Cursos"
-        ordering = ['fecha_creacion']  # ordena de más antigua a más reciente
+        ordering = ['fecha_creacion']  
